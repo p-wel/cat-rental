@@ -1,15 +1,15 @@
-from django.shortcuts import render, redirect
-from django.urls import reverse
+from django.views.generic import FormView
 
 from .forms import RegisterForm
 
 
-def register(response):
-    if response.method == 'POST':
-        form = RegisterForm(response.POST)
-        if form.is_valid():
-            form.save()
-        return redirect(reverse('cats:index'))
-    else:
-        form = RegisterForm()
-    return render(response, 'accounts/register.html', {'form': form})
+class RegisterFormView(FormView):
+    """Simple user registration view"""
+
+    template_name = 'accounts/register.html'
+    form_class = RegisterForm
+    success_url = '/'
+
+    def form_valid(self, form):
+        form.save()
+        return super(RegisterFormView, self).form_valid(form)

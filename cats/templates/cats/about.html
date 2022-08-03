@@ -3,9 +3,11 @@
 </head>
 {% extends 'base.html' %}
 {% block content %}
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'cats/style.css' %}"/>
     <h1>About</h1>
     <div class="about-content">
         <div>More projects:</div>
-        <a href="https://github.com/p-wel" target="_blank">https://github.com/p-wel</a>
+        <a href="https://github.com/p-wel" target="_blank" rel="noopener noreferrer">https://github.com/p-wel</a>
     </div>
 {% endblock %}

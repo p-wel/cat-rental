@@ -28,6 +28,5 @@ urlpatterns = [
     path("cat/<int:pk>/", CatDetailView.as_view(), name="details"),
     path("cat/<int:cat_id>/rental_dates/", RentalFormView.as_view(), name="rental_dates"),
     path("cat/<int:cat_id>/rental_dates/congrats/", congrats_mail, name="congrats_mail"),
-    # path("cat/rentals/", rentals_history, name="rentals_history"),
     path("cat/rentals/", RentalListView.as_view(), name="rentals_history"),
 ]

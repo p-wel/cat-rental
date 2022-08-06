@@ -3,8 +3,6 @@
   "model": "cats.cat",
   "pk": 1,
   "fields": {
-    "created": "2022-01-12T13:18:54.491Z",
-    "modified": "2022-01-17T19:10:37.730Z",
     "name": "Kitten",
     "breed": 1,
     "description": "Kitten description"
@@ -14,8 +12,6 @@
   "model": "cats.cat",
   "pk": 2,
   "fields": {
-    "created": "2022-01-12T13:19:16.120Z",
-    "modified": "2022-01-30T13:18:31.993Z",
     "name": "Kot admina",
     "breed": 8,
     "description": ""
@@ -25,8 +21,6 @@
   "model": "cats.cat",
   "pk": 3,
   "fields": {
-    "created": "2022-01-13T09:00:31.145Z",
-    "modified": "2022-01-30T12:06:49.686Z",
     "name": "Kitten2",
     "breed": 4,
     "description": "Desc of Kitten2"
@@ -36,8 +30,6 @@
   "model": "cats.cat",
   "pk": 4,
   "fields": {
-    "created": "2022-01-13T09:00:45.628Z",
-    "modified": "2022-01-29T16:49:58.519Z",
     "name": "catcat",
     "breed": 6,
     "description": ""
@@ -47,8 +39,6 @@
   "model": "cats.cat",
   "pk": 5,
   "fields": {
-    "created": "2022-01-13T09:00:54.129Z",
-    "modified": "2022-01-30T13:13:07.791Z",
     "name": "Big cat",
     "breed": 9,
     "description": ""
@@ -58,8 +48,6 @@
   "model": "cats.cat",
   "pk": 6,
   "fields": {
-    "created": "2022-01-13T09:01:04.841Z",
-    "modified": "2022-01-30T12:15:10.235Z",
     "name": "Quick Cat",
     "breed": 11,
     "description": ""
@@ -69,8 +57,6 @@
   "model": "cats.cat",
   "pk": 7,
   "fields": {
-    "created": "2022-01-13T09:01:19.510Z",
-    "modified": "2022-01-30T13:18:32.613Z",
     "name": "MericanCat",
     "breed": 1,
     "description": ""
@@ -80,8 +66,6 @@
   "model": "cats.cat",
   "pk": 8,
   "fields": {
-    "created": "2022-01-13T09:01:46.612Z",
-    "modified": "2022-01-30T11:56:24.384Z",
     "name": "Egyptian",
     "breed": 2,
     "description": ""
@@ -91,8 +75,6 @@
   "model": "cats.cat",
   "pk": 9,
   "fields": {
-    "created": "2022-01-30T13:41:05.476Z",
-    "modified": "2022-01-30T13:41:05.476Z",
     "name": "Cat10",
     "breed": 10,
     "description": ""
@@ -102,8 +84,6 @@
   "model": "cats.cat",
   "pk": 10,
   "fields": {
-    "created": "2022-01-30T13:41:10.814Z",
-    "modified": "2022-01-30T13:41:10.814Z",
     "name": "Cat11",
     "breed": 9,
     "description": ""
@@ -113,8 +93,6 @@
   "model": "cats.cat",
   "pk": 11,
   "fields": {
-    "created": "2022-01-30T13:41:15.256Z",
-    "modified": "2022-01-30T13:43:32.856Z",
     "name": "Cat12",
     "breed": 11,
     "description": ""
@@ -124,8 +102,6 @@
   "model": "cats.cat",
   "pk": 12,
   "fields": {
-    "created": "2022-01-30T13:41:21.586Z",
-    "modified": "2022-01-30T13:41:21.586Z",
     "name": "Cat13",
     "breed": 12,
     "description": ""
@@ -135,8 +111,6 @@
   "model": "cats.cat",
   "pk": 13,
   "fields": {
-    "created": "2022-01-30T13:41:25.541Z",
-    "modified": "2022-01-30T13:41:25.541Z",
     "name": "Cat14",
     "breed": 8,
     "description": ""
@@ -146,8 +120,6 @@
   "model": "cats.cat",
   "pk": 14,
   "fields": {
-    "created": "2022-01-30T13:41:28.801Z",
-    "modified": "2022-01-30T13:43:47.573Z",
     "name": "Cat15",
     "breed": 7,
     "description": ""
@@ -157,8 +129,6 @@
   "model": "cats.cat",
   "pk": 15,
   "fields": {
-    "created": "2022-01-30T13:41:35.509Z",
-    "modified": "2022-01-30T13:41:35.509Z",
     "name": "Cat16",
     "breed": 6,
     "description": ""
@@ -168,8 +138,6 @@
   "model": "cats.cat",
   "pk": 16,
   "fields": {
-    "created": "2022-01-30T13:41:39.277Z",
-    "modified": "2022-01-30T13:41:39.277Z",
     "name": "Cat17",
     "breed": 5,
     "description": ""
@@ -179,8 +147,6 @@
   "model": "cats.cat",
   "pk": 17,
   "fields": {
-    "created": "2022-01-30T13:41:44.988Z",
-    "modified": "2022-01-30T13:41:44.988Z",
     "name": "Cat18",
     "breed": 4,
     "description": ""
@@ -190,8 +156,6 @@
   "model": "cats.cat",
   "pk": 18,
   "fields": {
-    "created": "2022-01-30T13:41:49.341Z",
-    "modified": "2022-01-30T13:41:49.341Z",
     "name": "Cat19",
     "breed": 3,
     "description": ""
@@ -201,8 +165,6 @@
   "model": "cats.cat",
   "pk": 19,
   "fields": {
-    "created": "2022-01-30T13:41:53.272Z",
-    "modified": "2022-01-30T13:41:53.272Z",
     "name": "Cat20",
     "breed": 2,
     "description": ""
@@ -212,8 +174,6 @@
   "model": "cats.cat",
   "pk": 20,
   "fields": {
-    "created": "2022-01-30T13:41:56.224Z",
-    "modified": "2022-01-30T13:41:56.224Z",
     "name": "Cat21",
     "breed": 1,
     "description": ""

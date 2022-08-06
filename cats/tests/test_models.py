@@ -1,51 +1,48 @@
 import datetime
-from unittest import TestCase
 
-from cats.models import Rental, Cat, Species, Breed
-from cats.tests.factories import RentalFactory
+from cats.models import Rental
 
 
-class TestModels(TestCase):
+def test_rental_has_user_assigned(db, rental_factory_fixture):
+    """
+    Test if rental has user assigned
+    """
 
-    def setUp(self):
-        """
-        RentalFactory creates new objects:
-        - Species
-        - Breed
-        - Cat
-        - User
-        and uses them to create new Rental object
+    for rental in rental_factory_fixture:
+        assert rental.user is not None
 
-        build() method used to not save those object in database
-        """
-        RentalFactory.build_batch(50)
 
-    def test_species_exists(self):
-        assert Species.objects.exists()
+def test_rental_has_cat_assigned(db, rental_factory_fixture):
+    """
+    Test if rental has cat assigned
+    """
 
-    def test_breeds_exists(self):
-        assert Breed.objects.exists()
+    for rental in rental_factory_fixture:
+        assert rental.cat is not None
 
-    def test_cats_exists(self):
-        assert Cat.objects.exists()
 
-    def test_rentals_exists(self):
-        assert Rental.objects.exists()
+def test_rental_has_proper_dates(db, rental_factory_fixture):
+    """
+    Test if rentals have rental date lower or equal to return date
+    """
 
-    def test_rental_has_cat(self):
-        assert Rental.objects.get(pk=1).cat is not None
+    for rental in rental_factory_fixture:
+        assert rental.rental_date <= rental.return_date
 
-    def test_filter_available_between_dates_within_following_month(self):
-        """
-        Method in filter_available_between_dates() should return Queryset of Cats available in given dates.
-        Test checks if cats filtered are not rented between today and tomorrow.
-        """
-        today = datetime.date.today()
-        next_month_day = datetime.date.today() + datetime.timedelta(days=30)
 
-        available_cats = Cat.objects.get_available_cats(today, next_month_day)
-        valid_rentals = Rental.objects.filter(
-            rental_date__gte=today, return_date__lte=next_month_day
-        )
+def test_rental_dates_are_not_none(db, rental_factory_fixture):
+    """
+    Test if rental dates are not None
+    """
 
-        assert available_cats not in valid_rentals
+    for rental in rental_factory_fixture:
+        assert rental.rental_date is not None and rental.return_date is not None
+
+
+def test_rental_dates_are_date_types(db, rental_factory_fixture):
+    """
+    Test if rental dates are 'datetime.date' type
+    """
+
+    for rental in rental_factory_fixture:
+        assert type(rental.rental_date) is datetime.date and type(rental.return_date) is datetime.date

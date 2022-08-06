@@ -47,6 +47,18 @@ class CatFactory(factory.django.DjangoModelFactory):
 
 
 class RentalFactory(factory.django.DjangoModelFactory):
+    """
+    RentalFactory firstly creates new objects:
+    - Species
+    - Breed
+    - Cat
+    - User
+    Then uses them to create a new Rental object with 30-days rental period
+    """
+
+    _rentals_first_status = Rental.STATUS[0][0]
+    _rentals_last_status = Rental.STATUS[len(Rental.STATUS) - 1][0]
+
     class Meta:
         model = Rental
 
@@ -54,4 +66,5 @@ class RentalFactory(factory.django.DjangoModelFactory):
     user = factory.SubFactory(UserFactory)
     rental_date = factory.LazyAttribute(lambda _: faker.future_date())
     return_date = factory.LazyAttribute(lambda _self: _self.rental_date + datetime.timedelta(days=30))
-    status = FuzzyInteger(0, 4, 1)
+
+    status = FuzzyInteger(_rentals_first_status, _rentals_last_status, 1)

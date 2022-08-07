@@ -45,4 +45,7 @@ def test_rental_dates_are_date_types(db, rental_factory_fixture):
     """
 
     for rental in rental_factory_fixture:
-        assert type(rental.rental_date) is datetime.date and type(rental.return_date) is datetime.date
+        assert (
+            type(rental.rental_date) is datetime.date
+            and type(rental.return_date) is datetime.date
+        )

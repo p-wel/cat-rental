@@ -65,6 +65,8 @@ class RentalFactory(factory.django.DjangoModelFactory):
     cat = factory.SubFactory(CatFactory)
     user = factory.SubFactory(UserFactory)
     rental_date = factory.LazyAttribute(lambda _: faker.future_date())
-    return_date = factory.LazyAttribute(lambda _self: _self.rental_date + datetime.timedelta(days=30))
+    return_date = factory.LazyAttribute(
+        lambda _self: _self.rental_date + datetime.timedelta(days=30)
+    )
 
     status = FuzzyInteger(_rentals_first_status, _rentals_last_status, 1)

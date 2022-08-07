@@ -91,7 +91,9 @@ class Rental(models.Model):
             raise ValidationError('"Return date" must be further than "return from"')
 
         # If cat won't be found in available cats queryset - raise error
-        if not Cat.objects.get_available_cats(self.rental_date, self.return_date).filter(pk=self.cat.pk):
+        if not Cat.objects.get_available_cats(
+            self.rental_date, self.return_date
+        ).filter(pk=self.cat.pk):
             raise ValidationError("Cat is not available in given timeframes")
 
     def __str__(self):

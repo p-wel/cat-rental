@@ -4,16 +4,18 @@
 {% block title %}Cat details{% endblock %}
 {% block content %}
     <h1>Rental dates</h1>
-    <div style="text-align: center; max-width: 200px; margin: auto">
+    <div class="rental-form">
         <div>
             <label>
-                You're going to rent: {{ cat.name }}
+                <b>
+                    You're going to rent: {{ cat.name }}
+                </b>
             </label>
         </div>
         <form method="post">
             {% csrf_token %}
-            {{ rental_form }}
-                <button type="submit"> Rent!</button>
+            {{ form }}
+            <button type="submit"> Rent!</button>
         </form>
     </div>
 {% endblock %}

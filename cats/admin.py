@@ -39,19 +39,16 @@ class RentalAdmin(admin.ModelAdmin):
 
     @admin.action(description="Update status")
     def update_status(self, request, queryset):
-        if 'submit' in request.POST:
-            queryset.update(status=request.POST['options'][1])
+        if "submit" in request.POST:
+            queryset.update(status=request.POST["options"][1])
 
-            self.message_user(
-                request,
-                f"Changed status for {queryset.count()} rentals"
-            )
+            self.message_user(request, f"Changed status for {queryset.count()} rentals")
             return HttpResponseRedirect(request.get_full_path())
 
         return render(
             request,
-            'admin/action_update_status.html',
-            context={'rentals': queryset, 'status_options': Rental.STATUS}
+            "admin/action_update_status.html",
+            context={"rentals": queryset, "status_options": Rental.STATUS},
         )
 
     list_display = ["id", "user", "cat", "rental_date", "return_date", "status"]

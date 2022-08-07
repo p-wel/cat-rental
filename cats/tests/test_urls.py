@@ -22,7 +22,3 @@ class URLTests(TestCase):
     def test_explore(self):
         response = self.client.get('/explore/')
         self.assertEqual(response.status_code, 200)
-
-    def test_cats_list_1(self):
-        response = self.client.get('/species/1/')
-        self.assertEqual(response.status_code, 200)

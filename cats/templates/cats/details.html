@@ -4,7 +4,7 @@
     <h1>"{{ cat.name }}" details</h1>
     <div>Cat name: {{ cat.name }}</div>
     <div>Cat description: {{ cat.description }}</div>
-    <div style="text-align: center">
+    <div class="center">
         <a class="btn btn-primary" href="{% url 'cats:rental_dates' cat.id %}" role="button">Choose dates</a>
     </div>
 {% endblock %}

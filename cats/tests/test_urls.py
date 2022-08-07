@@ -8,21 +8,17 @@ class URLTests(TestCase):
     """
 
     def test_index(self):
-        response = self.client.get()
+        response = self.client.get('/')
         self.assertEqual(response.status_code, 200)
 
     def test_about(self):
-        response = self.client.get()
+        response = self.client.get('/about/')
         self.assertEqual(response.status_code, 200)
 
     def test_species(self):
-        response = self.client.get()
+        response = self.client.get('/species/')
         self.assertEqual(response.status_code, 200)
 
     def test_explore(self):
-        response = self.client.get()
-        self.assertEqual(response.status_code, 200)
-
-    def test_cats_list_1(self):
-        response = self.client.get()
+        response = self.client.get('/explore/')
         self.assertEqual(response.status_code, 200)

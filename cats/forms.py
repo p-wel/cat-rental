@@ -14,6 +14,11 @@ from cats.models import Rental
 class RentalForm(forms.ModelForm):
     """Form used to create a new Rental object"""
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['rental_date'].initial = datetime.date.today()
+        self.fields['return_date'].initial = datetime.date.today()
+
     class Meta:
         model = Rental
         fields = ["cat", "user", "rental_date", "return_date"]
@@ -25,8 +30,10 @@ class RentalForm(forms.ModelForm):
                     "class": "datepicker",
                     "type": "date",
                     "placeholder": "DD-MM-YYYY",
+                    "initial": datetime.date.today(),
                 }
             ),
+
             "return_date": forms.DateInput(
                 attrs={
                     "class": "datepicker",
@@ -51,6 +58,7 @@ class SearchForm(forms.Form):
         widget=forms.DateInput(
             attrs={"class": "datepicker", "type": "date", "placeholder": "DD-MM-YYYY"}
         ),
+        initial=datetime.date.today(),
         required=True,
     )
 

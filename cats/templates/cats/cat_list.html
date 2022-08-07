@@ -9,12 +9,13 @@
         <div class="bg-warning">
             No such species id
         </div>
-    {% elif cats == None %}
+    {% elif cats_filtered == None %}
         <div class="bg-warning">
             Search cats available in given dates
         </div>
         <div class="search-form">
-            <form method="get">
+            <form method="post">
+                {% csrf_token %}
                 {{ form }}
                 <button type="submit">Search</button>
             </form>
@@ -28,7 +29,7 @@
             <td>Last rental</td>
             <td>Last return</td>
             </thead>
-            {% for cat in page_obj %}
+            {% for cat in cats_filtered %}
                 <tr>
                     <td><a class="btn btn-outline-primary" href="{% url 'cats:details' cat.id %}"
                            role="button">{{ cat.name }}</a></td>
@@ -38,28 +39,5 @@
                 </tr>
             {% endfor %}
         </table>
-        <div class="pagination">
-                <span class="step-links">
-                    {% if page_obj.has_previous %}
-                        <a href="?page=1&date_from={{ form.data.date_from }}&date_to={{ form.data.date_to }}">
-                            First
-                        </a>
-                        <a href="?page={{ page_obj.previous_page_number }}&date_from={{ form.data.date_from }}&date_to={{ form.data.date_to }}">
-                            Previous
-                        </a>
-                    {% endif %}
-                    <span class="current">
-                        {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
-                    </span>
-                    {% if page_obj.has_next %}
-                        <a href="?page={{ page_obj.next_page_number }}&date_from={{ form.data.date_from }}&date_to={{ form.data.date_to }}">
-                            Next
-                        </a>
-                        <a href="?page={{ page_obj.paginator.num_pages }}&date_from={{ form.data.date_from }}&date_to={{ form.data.date_to }}">
-                            Last
-                        </a>
-                    {% endif %}
-                </span>
-        </div>
     {% endif %}
 {% endblock %}

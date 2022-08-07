@@ -16,8 +16,8 @@ class RentalForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['rental_date'].initial = datetime.date.today()
-        self.fields['return_date'].initial = datetime.date.today()
+        self.fields["rental_date"].initial = datetime.date.today()
+        self.fields["return_date"].initial = datetime.date.today()
 
     class Meta:
         model = Rental
@@ -33,7 +33,6 @@ class RentalForm(forms.ModelForm):
                     "initial": datetime.date.today(),
                 }
             ),
-
             "return_date": forms.DateInput(
                 attrs={
                     "class": "datepicker",

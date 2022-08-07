@@ -15,47 +15,112 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Breed',
+            name="Breed",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=50)),
-                ('description', models.TextField(blank=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=50)),
+                ("description", models.TextField(blank=True)),
             ],
         ),
         migrations.CreateModel(
-            name='Cat',
+            name="Cat",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=50)),
-                ('description', models.TextField(blank=True)),
-                ('breed', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='cats.breed')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=50)),
+                ("description", models.TextField(blank=True)),
+                (
+                    "breed",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="cats.breed"
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='Species',
+            name="Species",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=50)),
-                ('description', models.TextField(blank=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=50)),
+                ("description", models.TextField(blank=True)),
             ],
             options={
-                'verbose_name_plural': 'Species',
+                "verbose_name_plural": "Species",
             },
         ),
         migrations.CreateModel(
-            name='Rental',
+            name="Rental",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('rental_date', models.DateField(blank=True, null=True)),
-                ('return_date', models.DateField(blank=True, null=True)),
-                ('status', models.PositiveSmallIntegerField(choices=[(0, 'Not activate (draft)'), (1, 'Pending (@)'), (2, 'Active'), (3, 'Finished'), (4, 'Cancelled')], default=2)),
-                ('cat', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='rentals', to='cats.cat')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='rentals', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("rental_date", models.DateField(blank=True, null=True)),
+                ("return_date", models.DateField(blank=True, null=True)),
+                (
+                    "status",
+                    models.PositiveSmallIntegerField(
+                        choices=[
+                            (0, "Not activate (draft)"),
+                            (1, "Pending (@)"),
+                            (2, "Active"),
+                            (3, "Finished"),
+                            (4, "Cancelled"),
+                        ],
+                        default=2,
+                    ),
+                ),
+                (
+                    "cat",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="rentals",
+                        to="cats.cat",
+                    ),
+                ),
+                (
+                    "user",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="rentals",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
         migrations.AddField(
-            model_name='breed',
-            name='species',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='cats.species'),
+            model_name="breed",
+            name="species",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to="cats.species"
+            ),
         ),
     ]

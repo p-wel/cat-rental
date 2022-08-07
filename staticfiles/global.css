@@ -8,3 +8,13 @@ h1 {
     background-color: powderblue;
     font-size: x-large;
 }
+
+.center {
+    text-align: center;
+}
+
+.login-form {
+    width: 500px;
+    text-align: center;
+    margin: auto;
+}

@@ -6,9 +6,9 @@ from .forms import RegisterForm
 class RegisterFormView(FormView):
     """Simple user registration view"""
 
-    template_name = 'accounts/register.html'
+    template_name = "accounts/register.html"
     form_class = RegisterForm
-    success_url = '/'
+    success_url = "/"
 
     def form_valid(self, form):
         form.save()

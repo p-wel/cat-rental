@@ -18,3 +18,9 @@ h1 {
     text-align: center;
     margin: auto;
 }
+
+.error-information {
+    width: 500px;
+    text-align: center;
+    margin: auto
+}
